@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<title>2048</title>
+    <link href="style/main.css" tppabs="http://gabrielecirulli.github.io/2048/style/main.css" rel="stylesheet" type="text/css"> 
+    <script type="text/javascript" language="javascript" src="lib/jquery-1.11.1.min.js"></script> 
+    <script type="text/javascript" language="javascript" src="lib/TizenTVKeyValue.js"></script>
+    <script type="text/javascript" language="javascript" src="js/Main.js"></script>
+   <!--<script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/Widget.js'></script>
+  	<script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/TVKeyValue.js'></script>
+  	<script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/jquery.js'></script>
+  	<script type="text/javascript" src="http://htmljs.b0.upaiyun.com//js/jquery.js"></script>-->
+    
+    
+	
+
+	
+</head>
+<body >
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+   <div class="game-explanation">
+      <a class="restart-button button active">重新开始</a>
+      <br>
+      游戏方法:
+       <br/> 使用 <strong>方向键</strong> 移动小方块。
+       <br/> 使用 <strong>确定键</strong> 重新开始游戏。
+       <br/>当移动方向上两个相邻方块的数字相同,
+       <br/>方块中的数字会加在一起。
+       <br/>
+       <br/>小伙伴们加油,组合出属于你的2048吧!
+       <!--  
+	       Disable for 2015 TV
+	       <p class="tips"><em>注：对于智能遥控器用户，<br>也可以使用<strong>触控板滑动</strong>进行方向操作。</em></p>
+        -->
+    </div>
+    
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button button">继续游戏</a>
+          <a class="retry-button button">再次挑战</a>
+          
+        </div>
+      </div>
+	  
+	  
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+  </div>
+  <!--<audio id='bg_music' src = 'Audio/bg_music.mp3' preload='auto' loop='loop'></audio>-->
+    <script type="text/javascript">
+        function debug(s){
+            console.log(s);
+        };
+        
+        if(navigator.platform === 'Win32'){
+            window.alert = debug;
+        }else{
+            //window.alert = debug;
+        }
+
+        try {
+            window.widgetAPI = new Common.API.Widget();
+        } catch (e) {
+            window.widgetAPI = {
+                sendReadyEvent: function() {},
+                blockNavigation: function() {},
+                sendExitEvent: function() {}
+            };
+        }
+
+        try {
+            window.tvKey = new Common.API.TVKeyValue();
+        } catch (e) {
+            window.tvKey = {
+                KEY_0: 96,
+                KEY_1: 97,
+                KEY_UP: 38, // Up
+                KEY_RIGHT: 39, // Right
+                KEY_DOWN: 40, // Down
+                KEY_LEFT: 37, // Left
+                KEY_ENTER: 13,
+            };
+        };
+               
+    </script>
+    <script src="js/bind_polyfill.js" tppabs="http://gabrielecirulli.github.io/2048/js/bind_polyfill.js"></script>
+    <script src="js/classlist_polyfill.js" tppabs="http://gabrielecirulli.github.io/2048/js/classlist_polyfill.js"></script>
+    <script src="js/animframe_polyfill.js" tppabs="http://gabrielecirulli.github.io/2048/js/animframe_polyfill.js"></script>
+    <script src="js/keyboard_input_manager.js" tppabs="http://gabrielecirulli.github.io/2048/js/keyboard_input_manager.js"></script>
+    <script src="js/html_actuator.js" tppabs="http://gabrielecirulli.github.io/2048/js/html_actuator.js"></script>
+    <script src="js/grid.js" tppabs="http://gabrielecirulli.github.io/2048/js/grid.js"></script>
+    <script src="js/tile.js" tppabs="http://gabrielecirulli.github.io/2048/js/tile.js"></script>
+    <script src="js/local_storage_manager.js" tppabs="http://gabrielecirulli.github.io/2048/js/local_storage_manager.js"></script>
+    <script src="js/game_manager.js" tppabs="http://gabrielecirulli.github.io/2048/js/game_manager.js"></script>
+    <script src="js/application.js" tppabs="http://gabrielecirulli.github.io/2048/js/application.js"></script>
+
+</body>
+</html>

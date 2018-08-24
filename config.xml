@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/CLC2048" version="1.0.1" viewmodes="maximized">
+    <tizen:application id="XIKRYvclSn.CLC2048" package="XIKRYvclSn" required_version="2.3"/>
+    <content src="index.html"/>
+    <description xml:lang="zh-cn">2048</description>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://www.samsungdforum.com/feature/Mouse"/>
+    <icon src="icon.png" height="423" width="512"/>
+    <tizen:metadata key="http://samsung.com/tv/metadata/multiscreen.support" value="true"/>
+    <name xml:lang="zh-cn">2048</name>
+    <name>2048</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:profile name="tv"/>
+</widget>
